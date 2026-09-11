@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Valentine Surprise</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <div class="floating-hearts" id="floating-hearts"></div>
+    
+    <div class="container">
+        <header>
+                <h1><i class="fas fa-heart heart-icon"></i> Feliz San Valentín Cutie<i class="fas fa-heart heart-icon"></i></h1>
+                <p>Aprovecho para felicitarte a ti dulzura</p>
+        </header>
+        
+        <div class="content">
+            <section class="main-message">
+                <h2>For Mari</h2>
+                <p>En este día de San Valentín, quería recordarte lo valioso que eres para mí. La amistad que compartimos es uno de los regalos más especiales que he recibido en la vida.</p>
+                <p>No necesitamos ser pareja para celebrar el amor. El cariño entre amigos es igual de importante y duradero. Gracias por estar siempre ahí, en los momentos buenos y en los no tan buenos.</p>
+                <p>Que este día te traiga alegría, sonrisas y la certeza de que hay alguien que te aprecia profundamente. ¡Eres una mejor amiga increíble!</p>
+                <p style="margin-top: 20px; font-weight: bold; color: #ff4d6d;">Con todo mi cariño, tu bestie.</p>
+            </section>
+            
+            <section class="friendship-quote">
+                <i class="fas fa-bookmark"></i>
+                <p>"Eres a quien llamaría su nombre con la dulzura de una esposa, y a pesar de haberme vuelto un hechicero malvado, aún te llamaría mi único mejor amigo"</p>
+                <p>"y sé que eres lo suficientemente friki como para entenderlo"</p>
+                <p style="margin-top: 15px; color: #777;">- for my Satoru</p>
+            </section>
+        </div>
+        
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="recursos/satosugu.jpg" alt="Friendship">
+            </div>
+            <div class="gallery-item">
+                <img src="recursos/Eimiko.jpg" alt="Amigos celebrando">
+            </div>
+            <div class="gallery-item">
+                <img src="recursos/🍭.jpg" alt="Amistad verdadera">
+            </div>
+            <div class="gallery-item">
+                <img src="recursos/todobaku.jpeg" alt="Amigos apoyándose">
+            </div>
+        </div>
+        
+        <section class="friendship-reasons">
+            <h2>Razones por las que valoro nuestra amistad</h2>
+            <div class="reasons-grid">
+                <div class="reason">
+                    <i class="fas fa-star"></i>
+                    <h3>Nos reímos juntas de cualquier pendejada</h3>
+                    <p>Encontramos divertido cualquier mínima cosita, eso es algo que nadie ha logrado replicar nunca.</p>
+                </div>
+                <div class="reason">
+                    <i class="fas fa-heartbeat"></i>
+                    <h3>Apoyo incondicional</h3>
+                    <p>Te encuentro cuando más te necesito, y cuando te hablo siento que podría llorar en tus brazos sin ser juzgada por ello.</p>
+                </div>
+                <div class="reason">
+                    <i class="fas fa-heart"></i>
+                    <h3>Confianza excesiva</h3>
+                    <p>Me aterra encontrarme sola ante una decisión, y tú siempre has sabido ser la perfecta compañía para todos mis desvalances.</p>
+                </div>
+                <div class="reason">
+                    <i class="fas fa-link"></i>
+                    <h3>Presencia y Existencia</h3>
+                    <p>Te quedaste a mi lado, incluso si pasaron días, meses o años. O si estabamos cerca o lejos.</p>
+                </div>
+                <div class="reason">
+                    <i class="fas fa-map-marker"></i>
+                    <h3>Enseñanza</h3>
+                    <p>Me mostraste que existe algo más fuerte que el amor, algo más valioso que siempre trato de mantener cuando se trata de ti.</p>
+                </div>
+            </div>
+        </section>
+        
+        <footer>
+            <div class="footer-hearts">
+                <i class="fas fa-heart"></i><i class="fas fa-heart"></i><i class="fas fa-heart"></i>
+            </div>
+            <p>¡Gracias por todos estos años de amor incondicional my wife, Feliz San Valentín!.</p>
+            <p style="margin-top: 15px; font-size: 0.9rem;">Este sitio web fue creado con cariño por Melody para celebrar nuestra amistad</p>
+        </footer>
+    </div>
+
+    <script>
+        // Crear corazones flotantes
+        document.addEventListener('DOMContentLoaded', function() {
+            const floatingHearts = document.getElementById('floating-hearts');
+            const heartCount = 25;
+            
+            for (let i = 0; i < heartCount; i++) {
+                const heart = document.createElement('div');
+                heart.classList.add('heart');
+                heart.innerHTML = '❤';
+                
+                // Posición aleatoria
+                const leftPos = Math.random() * 100;
+                const animationDuration = 6 + Math.random() * 6;
+                const fontSize = 15 + Math.random() * 20;
+                const colorOpacity = 0.2 + Math.random() * 0.3;
+                const color = `rgba(255, ${70 + Math.random() * 100}, ${100 + Math.random() * 150}, ${colorOpacity})`;
+                
+                heart.style.left = `${leftPos}%`;
+                heart.style.animationDuration = `${animationDuration}s`;
+                heart.style.fontSize = `${fontSize}px`;
+                heart.style.color = color;
+                heart.style.animationDelay = `${Math.random() * 5}s`;
+                
+                floatingHearts.appendChild(heart);
+            }
+            
+            // Efecto de título parpadeante
+            const title = document.querySelector('header h1');
+            setInterval(() => {
+                title.style.textShadow = `2px 2px 4px rgba(0, 0, 0, ${0.1 + Math.random() * 0.2})`;
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
